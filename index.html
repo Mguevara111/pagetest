@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssboots/bootstrap.min.css">
+    <title>Restaurante</title>
+</head>
+<style>
+    .tamanologo{
+        height: 100px;
+        width: 100px;
+    }
+    .tamanofila1{
+      height: 170px;
+    }
+    .tamanoimagen{
+      background-color: black;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+    .tam{
+      height: 100%;
+      width: 100%;
+    }
+    .tamanomenu{
+        height: 250px;
+        width: 250px;
+    }
+
+    /* .pruebaborrar figure{
+      height: 180px;
+      width: 180px;
+      margin: 0 10px;
+      
+    } */
+</style>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="col-9 ms-3">
+            <img src="imagenes/logo.jpg" alt="" class="tamanologo">
+           
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-dark" aria-current="page" href="#" ><strong data-nom="principal">INICIO</strong></a>
+              </li>
+              <li class="nav-item" data-nom="menu">
+                <a class="nav-link text-dark" href="#" data-nom="menu"><strong data-nom="menu">MENU</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#" ><strong data-nom="reservaciones">RESERVACIONES</strong></a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+           
+        
+    </header>
+    
+    <main>
+       <!-- ******************aqui se inserta el cuerpo -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imagenes/delicious-pizza-indoors (1).jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/delicious-pizza-indoors (2).jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/delicious-pizza-indoors.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+  
+
+
+        <!-- //******************ver menu***************************** -->
+        <div class="container-fluid">
+          <div class="row text-center align-content-center tamanofila1">
+              <h2 class="text-dark"><strong>Ver Menu</strong></h2>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row mb-4">
+              <div class="col-8">
+                  <div class="row mb-3">
+                      <img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid d-block">
+                  </div>
+                  <div class="row">
+                      <div class="col-6"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid "></div>
+                      <div class="col-6"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid "></div>
+                      
+                  </div>
+                  
+              </div>
+              <div class="col-4">
+                  <a href="#"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid d-block tamanoimagen"></a>
+              </div>
+          </div>
+      </div>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-6"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid tam"></div>
+          <div class="col-6 align-content-center">
+              <h2>titulo de lo que sea</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nemo error. At quae sequi dignissimos nobis ullam ad fugiat qui maxime, amet explicabo numquam reiciendis enim dolor debitis magni incidunt.</p>
+          </div>
+      </div>
+          
+      </div>
+    </div>
+     
+    
+
+    </main>
+    
+    
+    
+    
+      
+    
+
+
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex bg-danger">
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+        </ul>
+      
+        </div>
+      </footer>
+
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <h2></h2>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+    <script src="jsboots/bootstrap.bundle.min.js"></script>
+    <script src="restaurante.js" type="module"></script>
+</body>
+</html>
