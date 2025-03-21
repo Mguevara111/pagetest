@@ -3,16 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dogtech">
     <link rel="stylesheet" href="cssboots/bootstrap.min.css">
+    <link rel="stylesheet" href="restaurante.css">
     <title>Restaurante</title>
 </head>
 <style>
+    .dark{
+      background-color: black;
+      color:white;
+    }
+
     .tamanologo{
         height: 100px;
         width: 100px;
     }
     .tamanofila1{
-      height: 170px;
+      height: 110px;
+      border-top: 2px green solid;
+      border-bottom: 2px red solid;
+      
+    }
+    .letrasvermenu{
+      animation: movertamanofila1 2s linear forwards;
+    }
+    @keyframes movertamanofila1{
+      0%{
+        transform: translateX(0%);
+      }
+      25%{
+        transform: translateX(10%);
+      }
+      50%{
+        transform: translateX(20%);
+      }
+      100%{
+        transform: translateX(42%);
+      }
     }
     .tamanoimagen{
       background-color: black;
@@ -35,10 +62,111 @@
       margin: 0 10px;
       
     } */
+    .wsbtn{
+      position: fixed;
+      bottom: 30px;
+      right: 5px;
+    }
+    .figuremenu{
+      transition: zoom 1s ease;
+    }
+
+    .figuremenu:hover{
+      zoom: 1.5;
+    }
+    .figuremenu:hover .divfigureg{
+      
+      animation: moverfigcaption 2s linear forwards;
+      
+    }
+    .figuremenu:hover .divfigurer{
+      
+      animation: moverfigcaption 2s linear forwards;
+      
+    }
+
+    .fc{
+      display: flex; /* Habilita flexbox en el figcaption */
+      align-items: center; /* Alinea verticalmente los elementos al centro */
+      justify-content: center;
+    }
+    @keyframes moverfigcaption{
+      0%{
+        width: 0%;
+      }
+      25%{
+        width: 10%;
+      }
+      50%{
+        width: 20%;
+      }
+      100%{
+        width: 25%;
+      }
+    }
+    .divfigureg{
+      /*visibility: hidden;*/
+      background-color:green;
+      height: 10px;
+      width: 0%;
+      
+      margin-right: 5px;
+    }
+    .divfigurer{
+      /*visibility: hidden;*/
+      background-color:red;
+      height: 10px;
+      width: 0%;
+      
+      margin-left: 5px;
+    }
+    .animarletrasmenu{
+      animation: moverfigcaption 2s linear forwards;
+    }
+    @keyframes temblar{
+      0%,10%,30%,50%,70%,90%{
+        transform:translateX(-5px);
+      }
+      20%,40%,60%,80%,100%{
+        transform:translateX(5px);
+      }
+      
+    }
+    .contactanos{
+      display: flex;
+      border-top: 2px green solid;
+      border-bottom: 2px red solid;
+      justify-content: center;
+      
+    }
+    .contactanos img{
+      height: 30px;
+      width: 40px;
+      
+    }
+    
+    .imgcontact{
+      animation: temblar 2s linear;
+    }
+    .ndbutton{
+      background-color: rgb(175, 170, 170);
+      position: fixed;
+      bottom: 85px;
+      right: 5px;
+      height: 54px;
+      width: 54px;
+      border-radius: 90%;
+      border:0px;
+      cursor: pointer;
+      
+    }
+    .ndbutton:hover{
+      background-color: black;
+    }
 </style>
 <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" data-navdark="dark">
         <div class="container-fluid">
           <div class="col-9 ms-3">
             <img src="imagenes/logo.jpg" alt="" class="tamanologo">
@@ -50,15 +178,21 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active text-dark" aria-current="page" href="#" ><strong data-nom="principal">INICIO</strong></a>
+                <a class="nav-link active" aria-current="page" href="#" ><strong data-nom="principal">INICIO</strong></a>
               </li>
               <li class="nav-item" data-nom="menu">
-                <a class="nav-link text-dark" href="#" data-nom="menu"><strong data-nom="menu">MENU</strong></a>
+                <a class="nav-link" href="#" data-nom="menu"><strong data-nom="menu">MENU</strong></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark" href="#" ><strong data-nom="reservaciones">RESERVACIONES</strong></a>
+                <a class="nav-link" href="#" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg></a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="#" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                </svg></a>
+              </li>
             </ul>
             
           </div>
@@ -70,27 +204,47 @@
     
     <main>
        <!-- ******************aqui se inserta el cuerpo -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="imagenes/delicious-pizza-indoors (1).jpg" class="d-block w-100" alt="...">
+            <img src="imagenes/c1.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="imagenes/delicious-pizza-indoors (2).jpg" class="d-block w-100" alt="...">
+            <img src="imagenes/c2.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="imagenes/delicious-pizza-indoors.jpg" class="d-block w-100" alt="...">
+            <img src="imagenes/c3.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
   
+        <!-- //********************boton whatsapp -->
+        <a href=""> <svg height="45px" width="45px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        viewBox="0 0 58 58" xml:space="preserve" class="wsbtn">
+     <g>
+       <path style="fill:#2CB742;" d="M0,58l4.988-14.963C2.457,38.78,1,33.812,1,28.5C1,12.76,13.76,0,29.5,0S58,12.76,58,28.5
+         S45.24,57,29.5,57c-4.789,0-9.299-1.187-13.26-3.273L0,58z"/>
+       <path style="fill:#FFFFFF;" d="M47.683,37.985c-1.316-2.487-6.169-5.331-6.169-5.331c-1.098-0.626-2.423-0.696-3.049,0.42
+         c0,0-1.577,1.891-1.978,2.163c-1.832,1.241-3.529,1.193-5.242-0.52l-3.981-3.981l-3.981-3.981c-1.713-1.713-1.761-3.41-0.52-5.242
+         c0.272-0.401,2.163-1.978,2.163-1.978c1.116-0.627,1.046-1.951,0.42-3.049c0,0-2.844-4.853-5.331-6.169
+         c-1.058-0.56-2.357-0.364-3.203,0.482l-1.758,1.758c-5.577,5.577-2.831,11.873,2.746,17.45l5.097,5.097l5.097,5.097
+         c5.577,5.577,11.873,8.323,17.45,2.746l1.758-1.758C48.048,40.341,48.243,39.042,47.683,37.985z"/>
+     </g>
+     </svg></a>
 
+     <!-- **********************boton dia noche************* -->
+      
+        <button class="ndbutton">🌙</button>
+      
+     
 
         <!-- //******************ver menu***************************** -->
-        <div class="container-fluid">
-          <div class="row text-center align-content-center tamanofila1">
-              <h2 class="text-dark"><strong>Ver Menu</strong></h2>
+        <div class="container-fluid my-2">
+          <div class="row align-content-center tamanofila1">
+              <a href="#" class="text-decoration-none link-dark h3 vermenu" data-dark="dark"><img src="iconos/pizza-box_18044784.png" alt="" class="me-1">Ver Menu</a>
           </div>
       </div>
+
+
       <div class="container">
           <div class="row mb-4">
               <div class="col-8">
@@ -98,24 +252,38 @@
                       <img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid d-block">
                   </div>
                   <div class="row">
-                      <div class="col-6"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid "></div>
-                      <div class="col-6"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid "></div>
+                      <div class="col-6"><img src="imagenes/p1.jpg" alt="" class="img-fluid "></div>
+                      <div class="col-6"><img src="imagenes/p2.jpg" alt="" class="img-fluid "></div>
                       
                   </div>
                   
               </div>
               <div class="col-4">
-                  <a href="#"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid d-block tamanoimagen"></a>
+                  <a href="#"><img src="imagenes/p3.jpg" alt="" class="img-fluid d-block tamanoimagen"></a>
               </div>
           </div>
       </div>
+
+      <div class="container-fluid contactanos mb-4">
+        
+        <div class="row">
+          <div class="col py-2"><img src="iconos/call_3257107.png" alt="" class="contact"></div>
+          <div class="col py-2"><h2 class="">Contactanos!!</h2></div>
+          
+          
+        </div>
+        
+      </div>
+
+
       <div class="container-fluid">
           <div class="row">
-              <div class="col-6"><img src="imagenes/delicious-pizza-indoors (1).jpg" alt="" class="img-fluid tam"></div>
+              
           <div class="col-6 align-content-center">
-              <h2>titulo de lo que sea</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nemo error. At quae sequi dignissimos nobis ullam ad fugiat qui maxime, amet explicabo numquam reiciendis enim dolor debitis magni incidunt.</p>
+              
+          <p class="text-justify">La tradición se hornea en cada pizza. Desde nuestra masa artesanal, preparada con ingredientes frescos y locales, hasta nuestra salsa de tomate casera, cada bocado es un viaje a la auténtica Italia. Disfruta de nuestras clásicas Margarita, Pepperoni o atrévete con nuestras creaciones especiales. ¡Te esperamos para compartir momentos deliciosos en familia!</p>
           </div>
+          <div class="col-6"><img src="imagenes/p4.jpg" alt="" class="img-fluid tam"></div>
       </div>
           
       </div>
@@ -167,5 +335,8 @@
 
     <script src="jsboots/bootstrap.bundle.min.js"></script>
     <script src="restaurante.js" type="module"></script>
+    <script>
+      
+    </script>
 </body>
 </html>
