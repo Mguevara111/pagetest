@@ -186,16 +186,16 @@ document.addEventListener('DOMContentLoaded',()=>{
     entradas('imgcontact',contact);
     //entradas('letrasvermenu',letrasvermenu1);
     //console.log(letrasvermenu1)
-    const cb2=(entries)=>{
-        entries.forEach(ent=>{
-            if(ent.isIntersecting){
-                ent.target.classList.add('letrasvermenu')
+    // const cb2=(entries)=>{
+    //     entries.forEach(ent=>{
+    //         if(ent.isIntersecting){
+    //             ent.target.classList.add('letrasvermenu')
                 
-            }
-            })
-        }
-    const obser1=new IntersectionObserver(cb2,{threshold:1})
-    obser1.observe(letrasvermenu1);   
+    //         }
+    //         })
+    //     }
+    // const obser1=new IntersectionObserver(cb2,{threshold:1})
+    // obser1.observe(letrasvermenu1);   
     
 
 })
